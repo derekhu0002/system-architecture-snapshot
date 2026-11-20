@@ -1,0 +1,54 @@
+name: 预约试点 · 存量系统架构快照
+description: 用一句话说明你的老系统现状，我们回一个两周交付方案
+title: "[试点预约] "
+labels: ["pilot-request"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        这是公开 issue，请**不要**写公司名称、系统密码、客户数据或任何商业机密。
+        只写行业 + 系统规模 + 最痛的一件事就够；细节等我们私下沟通。
+
+  - type: dropdown
+    id: industry
+    attributes:
+      label: 行业
+      options:
+        - 制造
+        - 连锁零售
+        - 医药流通
+        - 其他
+    validations:
+      required: true
+
+  - type: input
+    id: scale
+    attributes:
+      label: 在用的核心系统数量
+      placeholder: 例如：6 套（ERP / WMS / POS / 财务 / 自研订单 / BI）
+    validations:
+      required: true
+
+  - type: textarea
+    id: pain
+    attributes:
+      label: 最痛的一件事
+      description: 具体到现象，例如「三个系统各有一份库存，对账靠 Excel，每月多花 3 天」
+    validations:
+      required: true
+
+  - type: input
+    id: contact
+    attributes:
+      label: 希望怎么联系我们
+      description: 可以只写「先在这里留言」；如需私下沟通，回帖后我们提供后续方式。
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: scope
+    attributes:
+      label: 确认
+      options:
+        - label: 我确认以上内容不含公司名称、客户数据或商业机密
+          required: true
